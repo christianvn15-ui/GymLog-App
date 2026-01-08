@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GymLog | Profile</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <script src="me.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="header-profile">
+      <img id="header-pic" src="default-profile.png" alt="Profile Picture" class="profile-pic-small">
+      <span id="header-name" class="profile-name">User Name</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="profile-section">
+      <img id="main-pic" src="default-profile.png" alt="Profile Picture" class="profile-pic-large">
+      <h2 id="user-email">user@email.com</h2>
+      <p id="user-info">Height: -- | Weight: -- | Age: --</p>
+      <input type="file" id="profile-upload" accept="image/*" onchange="updateProfilePic(event)">
+    </section>
+
+    <section class="progress-section">
+      <h2>Progress Photos</h2>
+
+      <div class="progress-photo">
+        <h3>Date: <span id="progress-date-1">--</span></h3>
+        <div class="photo-modal">
+          <img id="progress-pic-1" src="default-progress.png" alt="Progress Photo 1" class="progress-pic">
+        </div>
+        <p>Weight: <span id="progress-weight-1">--</span></p>
+        <input type="file" accept="image/*" onchange="uploadProgressPhoto(event,1)">
+        <button class="cardbtn" onclick="updateProgress(1)">Update</button>
+      </div>
+
+      <div class="progress-photo">
+        <h3>Date: <span id="progress-date-2">--</span></h3>
+        <div class="photo-modal">
+          <img id="progress-pic-2" src="default-progress.png" alt="Progress Photo 2" class="progress-pic">
+        </div>
+        <p>Weight: <span id="progress-weight-2">--</span></p>
+        <input type="file" accept="image/*" onchange="uploadProgressPhoto(event,2)">
+        <button class="cardbtn" onclick="updateProgress(2)">Update</button>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

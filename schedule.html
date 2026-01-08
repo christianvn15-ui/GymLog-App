@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GymLog | Next Workout</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="schedule.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <header>
+    <h1 class="logo"><b>GymLog</b></h1>
+  </header>
+
+  <main>
+    <!-- Calendar navigation -->
+    <section class="calendar-controls">
+      <button class="cardbtn" onclick="prevMonth()">← Prev</button>
+      <h2 id="month-year"></h2>
+      <button class="cardbtn" onclick="nextMonth()">Next →</button>
+    </section>
+
+    <!-- Weekday headers -->
+    <section class="calendar-weekdays">
+      <div>Sun</div>
+      <div>Mon</div>
+      <div>Tue</div>
+      <div>Wed</div>
+      <div>Thu</div>
+      <div>Fri</div>
+      <div>Sat</div>
+    </section>
+
+    <!-- Calendar grid -->
+    <section class="calendar-grid" id="calendar"></section>
+
+    <!-- Add workout form -->
+    <section class="add-workout">
+      <h2>Schedule Workout</h2>
+      <input type="date" id="workout-date">
+      <input type="text" id="workout-name" placeholder="Workout Name">
+      <button class="cardbtn" onclick="addWorkout()">+ Add</button>
+    </section>
+  </main>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+  <footer>
+    <button class="footerbtn" onclick="home()" aria-label="Home">
+      <i class="fa fa-home" aria-hidden="true"></i>
+    </button>
+    <button class="footerbtn" onclick="workout()" aria-label="Workout Schedule">
+      <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+    </button>
+    <button class="footerbtn" onclick="me()" aria-label="User Info">
+      <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+    </button>
+  </footer>
+</body>
+</html>

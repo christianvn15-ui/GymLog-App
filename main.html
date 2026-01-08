@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GymLog | Home</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#229DB0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <header>
+    <h1 class="logo">GymLog</h1>
+  </header>
+
+  <main>
+    <!-- JS will inject workout list and + Add button -->
+
+    <!-- Install button (hidden until app is installable) -->
+    <button id="install-btn" class="cardbtn" style="display:none;">Install GymLog</button>
+  </main>
+
+  <footer>
+    <button class="footerbtn" onclick="home()" aria-label="Home"><i class="fa fa-home"></i></button>
+    <button class="footerbtn" onclick="workout()" aria-label="Workout Schedule"><i class="fa fa-calendar-check-o"></i></button>
+    <button class="footerbtn" onclick="me()" aria-label="User Info"><i class="fa fa-user-circle-o"></i></button>
+  </footer>
+
+  <script>
+    // Register service worker
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("service-worker.js")
+        .then(reg => console.log("Service Worker registered:", reg))
+        .catch(err => console.log("Service Worker registration failed:", err));
+    }
+
+    // Handle install prompt
+    let deferredPrompt;
+    const installBtn = document.getElementById("install-btn");
+
+    window.addEventListener("beforeinstallprompt", (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      installBtn.style.display = "block"; // show button
+    });
+
+    installBtn.addEventListener("click", () => {
+      installBtn.style.display = "none";
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.then(choiceResult => {
+        if (choiceResult.outcome === "accepted") {
+          console.log("User accepted the install prompt");
+        } else {
+          console.log("User dismissed the install prompt");
+        }
+        deferredPrompt = null;
+      });
+    });
+  </script>
+</body>
+</html>

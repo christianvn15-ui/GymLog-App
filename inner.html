@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GymLog | Workout</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <script src="inner.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <header>
+    <h1 class="logo">GymLog</h1>
+    <button class="back-btn" onclick="goHome()" aria-label="Back"><i class="fa fa-arrow-left"></i></button>
+  </header>
+
+  <main>
+    <!-- inner.js will render workout details here -->
+  </main>
+
+  <!-- Custom Exercise Modal -->
+  <div id="exercise-modal" class="modal">
+    <div class="modal-content">
+      <h2>Add Exercise</h2>
+      <input type="text" id="exercise-name" placeholder="Exercise Name">
+      <input type="number" id="exercise-reps" placeholder="Reps">
+      <input type="number" id="exercise-sets" placeholder="Sets">
+      <div class="modal-actions">
+        <button class="cardbtn" onclick="saveExercise()">Save</button>
+        <button class="cardbtn" onclick="closeModal()">Cancel</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
