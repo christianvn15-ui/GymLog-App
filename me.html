@@ -5,25 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GymLog | Profile</title>
   <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
   <script src="me.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+  <!-- Header with mini profile circle + name -->
   <header>
     <div class="header-profile">
-      <img id="header-pic" src="default-profile.png" alt="Profile Picture" class="profile-pic-small">
+      <img id="header-pic" src="default-profile.png" alt="Profile Picture" class="profile-pic-small">		
       <span id="header-name" class="profile-name">User Name</span>
     </div>
   </header>
 
   <main>
+    <!-- Main profile section -->
     <section class="profile-section">
       <img id="main-pic" src="default-profile.png" alt="Profile Picture" class="profile-pic-large">
-      <h2 id="user-email">user@email.com</h2>
+      <!-- Show name under profile picture -->
+      <h2 id="user-name">User Name</h2>
       <p id="user-info">Height: -- | Weight: -- | Age: --</p>
+      <!-- Profile picture upload (hidden after first upload) -->
       <input type="file" id="profile-upload" accept="image/*" onchange="updateProfilePic(event)">
     </section>
 
+    <!-- Progress photos section -->
     <section class="progress-section">
       <h2>Progress Photos</h2>
 
@@ -48,6 +53,8 @@
       </div>
     </section>
   </main>
+
+  <!-- Mobile-friendly footer navigation -->
   <footer>
     <button class="footerbtn" onclick="home()" aria-label="Home"><i class="fa fa-home"></i></button>
     <button class="footerbtn" onclick="workout()" aria-label="Workout Schedule"><i class="fa fa-calendar-check-o"></i></button>
